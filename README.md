@@ -33,12 +33,13 @@ the title to the launcher.
 
 The profile checker accepts `graphics = auto`, `gdi`, `dxvk` or `opengl`.
 `opengl` requires a prospero-win runtime built with the optional PS5 OpenGL
-SDK. SDK 0.6.0 provides an EGL compatibility profile and OpenGL 4.6 Core;
-Wine's legacy `wglCreateContext` path uses the compatibility default so games
-can call fixed-function APIs. The upstream compatibility-context gate covers
-legacy `QUADS` and related draws, but no Windows WGL game has been validated
-on hardware yet. Half-Life 1, Doom ports and other individual games remain
-unverified.
+SDK. The runtime forces Wine's builtin `opengl32` for that profile, preserving
+any other per-game DLL overrides. SDK 0.6.0 provides an EGL compatibility
+profile and OpenGL 4.6 Core; Wine's legacy `wglCreateContext` path uses the
+compatibility default so games can call fixed-function APIs. The upstream
+compatibility-context gate covers legacy `QUADS` and related draws, but no
+Windows WGL game has been validated on hardware yet. Half-Life 1, Doom ports
+and other individual games remain unverified.
 
 ## Install
 
